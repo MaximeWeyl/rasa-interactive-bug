@@ -1,0 +1,34 @@
+? The bot wants to run 'action_listen', correct? Yes                                                                                                                                                 
+? Your input -> i want you to create a new action and intent !!                                                                                                                                      
+? Your NLU model classified 'i want you to create a new action and intent !!' with intent 'bot_challenge' and there are no entities, is this correct? No                                             
+? What intent is it? <create_new_intent>                                                                                                                                                             
+? Please type the intent name: request_new_action                                                                                                                                                    
+? Please mark the entities using [value](type) notation i want you to create a new action and intent !!                                                                                              
+2021-09-02 15:02:37 ERROR    rasa.server  - An unexpected error occurred. Error: 'request_new_action' is not in list
+2021-09-02 15:02:37 ERROR    rasa.core.training.interactive  - An exception occurred while recording messages.
+Traceback (most recent call last):
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py", line 1519, in record_messages
+    await _predict_till_next_listen(
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py", line 972, in _predict_till_next_listen
+    result = await request_prediction(endpoint, conversation_id)
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py", line 172, in request_prediction
+    return await endpoint.request(
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/utils/endpoints.py", line 172, in request
+    raise ClientResponseError(
+rasa.utils.endpoints.ClientResponseError: 500, Internal Server Error, body='b'{"version":"2.8.4","status":"failure","message":"An unexpected error occurred. Error: \'request_new_action\' is not in list","reason":"ConversationError","details":{},"help":null,"code":500}''
+2021-09-02 15:02:37 ERROR    asyncio  - Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<_serve_application.<locals>.run_interactive_io() done, defined at /workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py:1609> exception=ClientResponseError('500, Internal Server Error, body=\'b\'{"version":"2.8.4","status":"failure","message":"An unexpected error occurred. Error: \\\'request_new_action\\\' is not in list","reason":"ConversationError","details":{},"help":null,"code":500}\'\'')>
+Traceback (most recent call last):
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py", line 1612, in run_interactive_io
+    await record_messages(
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py", line 1519, in record_messages
+    await _predict_till_next_listen(
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py", line 972, in _predict_till_next_listen
+    result = await request_prediction(endpoint, conversation_id)
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/core/training/interactive.py", line 172, in request_prediction
+    return await endpoint.request(
+  File "/workspace/.local/lib/python3.8/site-packages/rasa/utils/endpoints.py", line 172, in request
+    raise ClientResponseError(
+rasa.utils.endpoints.ClientResponseError: 500, Internal Server Error, body='b'{"version":"2.8.4","status":"failure","message":"An unexpected error occurred. Error: \'request_new_action\' is not in list","reason":"ConversationError","details":{},"help":null,"code":500}''
+
+
